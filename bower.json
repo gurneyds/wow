@@ -1,0 +1,18 @@
+{
+  "name": "wow",
+  "description": "Ward Organization Workshop",
+  "main": "index.js",
+  "authors": [
+    "David Gurney <gurneyds@ldschurch.org>"
+  ],
+  "license": "MIT",
+  "homepage": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

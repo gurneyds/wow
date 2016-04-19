@@ -1,0 +1,13 @@
+/.DS_Store
+**/target/
+**/node_modules/
+**/bower_components/
+**/build/
+**/.sass-cache/
+/.idea/
+/.git/
+/.mvn/
+**/*.eml
+**/*.iml
+**/*.swp
+**/*.log
