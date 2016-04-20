@@ -1,5 +1,6 @@
 var gulp = require('gulp'),
 	clean = require('gulp-clean'),
+	cleanCSS = require('gulp-clean-css'),
 	concat = require('gulp-concat'),
 	uglify = require('gulp-uglify'),
 	browserSync = require('browser-sync').create();
@@ -18,6 +19,7 @@ var paths = {
 		CLIENT_BASE + '/**/*.css'
 	],
 	stylesSrcLibPath: [
+		'bower_components/bootstrap/dist/css/bootstrap*.css'
 	],
 	scriptsSrcPath: [CLIENT_BASE + '/**/*.js'],
 	libsSrcPath: [
@@ -45,12 +47,11 @@ gulp.task('process-project-styles', function() {
 		.pipe(gulp.dest(BUILD_DIR))
 		.pipe(concat('wow.min.css'))
 		.pipe(cleanCSS({compatibility: 'ie8'}))
-		.pipe(gulp.dest(BUILD_DIR + '/stylesheets'))
+		.pipe(gulp.dest(BUILD_DIR + '/css'))
 });
 
 gulp.task('process-lib-styles', function() {
 	return gulp.src(paths.stylesSrcLibPath)
-		.pipe(gulp.dest(CLIENT_BASE + '/css'))
 		.pipe(gulp.dest(BUILD_DIR + '/css'))
 });
 
@@ -65,7 +66,7 @@ gulp.task('process-prod-scripts', function() {
 	return gulp.src(paths.scriptsSrcPath)
 		.pipe(uglify())
 		.pipe(concat('wow.min.js'))
-		.pipe(gulp.dest(BUILD_DIR + '/stylesheets'));
+		.pipe(gulp.dest(BUILD_DIR + '/css'));
 });
 
 gulp.task('process-scripts', ['process-dev-scripts', 'process-prod-scripts']);
