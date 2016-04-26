@@ -3,12 +3,16 @@
   <head>
     <script src="lib/angular.min.js"></script>
     <script src="wow-app.js"></script>
+    <script src="components/org/org.js"></script>
     <script src="components/calling/calling.js"></script>
 
     <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"/>
   </head>
   <body ng-app="wow-app">
-    <calling name="Bishop" position-count="1"></calling>
-    This is the raw index page with edits3
+    <div ng-controller="mainController as top">
+      <org org-info="top.orgInfo"></org>
+      <calling name="Bishop" position-count="1"></calling>
+      This is the raw index page with edits
+    </div>
   </body>
 </html>

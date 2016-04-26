@@ -1,0 +1,22 @@
+The purpose of this application is to help Ward and Branch unit organize and manage callings. Some possible uses include:
+
+1-) Bishopric members organizing and managing the ward callings
+2-) Primary presidency organizing teachers
+3-) Elders and High Priest Quorum presidencies organizing home teaching assignments
+4-) Relief Society organizing visiting teaching routes
+5-) Stake presidencies organizing and managing the stake callings
+
+How it works
+-------------
+Member and calling data is imported into the application.
+Callings are grouped by organization (Primary, YW, YM, Relief Society, Elders, High Priests, Mission etc)
+Within a calling the member that currently holds that calling is shown.
+The user can drag and drop names from one calling to another to explore different possibilities
+There are various filters that can be applied to highlight certain information including:
+  1-) Callings that need to be filled (currently empty)
+  2-) Members with more than 1 calling, more than 2 callings, more than 3 callings
+  3-) Members who have been in a calling for more than 90% of the expected duration
+When the user is satisfied with the changes they can see a summary of the releases and callings that would need to happen.
+Different named scenarios can be used to explore different possibilities
+User can mark a particular release or new calling as having been completed
+Once the members have been released and called, the user can "apply" the changes to update the actual callings.

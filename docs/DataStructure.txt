@@ -1,0 +1,40 @@
+Meta-data
+--------------
+Ward name
+  Collection of Organizations (Bishopric, Primary, YW, YM etc)
+    Organization
+      Collection of callings (President, 1st Councilor, advisor, teacher)
+        calling definition
+          id
+          name
+          number of position (some require 2 like instructors)
+          expected duration (expected time that a person would be in the calling)
+          Collection of member id's currently holding this calling
+            member identifier
+
+Member-data
+------------
+Collection of all member calling information
+  Member Information
+    name
+    Collection of calling info
+      Calling Info (Callings that the member currently has)
+        id - links to the calling meta-data above
+        Date Sustained - used to determine length in calling
+        Set apart flag
+        Release proposal flag - true if proposed that the member be released from this calling
+          This information is created by the UI or populated from scenario data
+    Collection of proposed calling id's (Callings that the member has been proposed to serve in)
+      id
+
+
+Scenario-data
+--------------
+name
+date last modified (to get an idea of how stale the information might be)
+Collection of member-data with proposed changes
+  member-proposal
+    collection of current calling releases
+      id
+    collection of proposed callings
+      id

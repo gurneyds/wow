@@ -6,11 +6,11 @@
 			restrict: 'E',
 			templateUrl: 'components/calling/calling.html',
             scope: {
-                name: '@',
-                positionCount: '@'
+                callingInfo: '='
             },
 			controller: ['$scope', function($scope) {
-                alert("calling directive");
+				var foo = "bar";
+				var bar = foo;
             }]
 		};
 	}]);
