@@ -28,3 +28,7 @@ Main features of the application should include the following:
   b-) Individuals with more than 1 calling
   
   c-) Empty callings
+
+Ideally the ward calling information would originate from Church Headerquarters - but if/when we can get access to real data we can just use mock data.
+
+[Technology direction](https://github.com/gurneyds/wow/tree/master/docs/techDirection.md)
