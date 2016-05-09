@@ -1,0 +1,9 @@
+.org {
+	border: 1px solid black;
+	margin: 5px;
+}
+.org-name {
+	font-weight: bold;
+	padding-left: 2px;
+	background-color: lightgray;
+}

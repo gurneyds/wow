@@ -1,18 +1,21 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <script src="lib/angular.min.js"></script>
-    <script src="wow-app.js"></script>
-    <script src="components/org/org.js"></script>
-    <script src="components/calling/calling.js"></script>
+	<head>
+		<script src="lib/angular.min.js"></script>
+		<script src="wow-app.js"></script>
+		<script src="components/org/org.js"></script>
+		<script src="components/calling/calling.js"></script>
 
-    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"/>
-  </head>
-  <body ng-app="wow-app">
-    <div ng-controller="mainController as top">
-      <org org-info="top.orgInfo"></org>
-      <calling name="Bishop" position-count="1"></calling>
-      This is the raw index page with edits
-    </div>
-  </body>
+		<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"/>
+		<link rel="stylesheet" type="text/css" href="components/org/org.css"/>
+		<link rel="stylesheet" type="text/css" href="components/calling/calling.css"/>
+
+		<!-- TODO use the line below after development is complete -->
+		<!--<link rel="stylesheet" type="text/css" href="css/wow.min.css"/>-->
+	</head>
+	<body ng-app="wow-app">
+		<div ng-controller="mainController as top">
+		  <org org-info="top.orgInfo"></org>
+		</div>
+	</body>
 </html>
