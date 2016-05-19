@@ -2,7 +2,13 @@
 <html>
 	<head>
 		<script src="lib/angular.min.js"></script>
+
 		<script src="wow-app.js"></script>
+		<script src="services/mockDataService.js"></script>
+
+		<script src="model/callingModel.js"></script>
+		<script src="model/orgModel.js"></script>
+
 		<script src="components/org/org.js"></script>
 		<script src="components/calling/calling.js"></script>
 
@@ -14,8 +20,25 @@
 		<!--<link rel="stylesheet" type="text/css" href="css/wow.min.css"/>-->
 	</head>
 	<body ng-app="wow-app">
-		<div ng-controller="mainController as top">
-		  <org org-info="top.orgInfo"></org>
+		<div ng-controller="mainController as top" class="container-fluid">
+			<div class="col-md-2">
+				<org org-info="top.organizationList[0]"></org>
+			</div>
+			<div class="col-md-2">
+				<org org-info="top.organizationList[0]"></org>
+			</div>
+			<div class="col-md-2">
+				<org org-info="top.organizationList[0]"></org>
+			</div>
+			<div class="col-md-2">
+				<org org-info="top.organizationList[0]"></org>
+			</div>
+			<div class="col-md-2">
+				<org org-info="top.organizationList[0]"></org>
+			</div>
+			<div class="col-md-2">
+				<org org-info="top.organizationList[0]"></org>
+			</div>
 		</div>
 	</body>
 </html>

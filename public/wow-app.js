@@ -1,32 +1,10 @@
 ;(function() {
 	'use strict';
-	var app = angular.module('wow-app', [])
+	var app = angular.module('wow-app', []);
 
-	.controller('mainController', [function() {
+	app.controller('mainController', ['mockDataService', function(mockDataService) {
 		var control = this;
 
-		control.orgInfo = {
-			orgName: 'Bishopric',
-			callings: [
-				{
-					name: 'Bishop',
-					positions: 1
-				},
-				{
-					name: '1st Councilor',
-					positions: 1
-				},
-				{
-					name: '2nd Councilor',
-					positions: 1
-				},
-				{
-					name: 'Exec Secretary',
-					positions: 1
-				}
-			]
-		};
-
-
+		control.organizationList = mockDataService.getOrganizationList();
 	}]);
 })();
