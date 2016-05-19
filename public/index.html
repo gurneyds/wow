@@ -12,31 +12,35 @@
 		<script src="components/org/org.js"></script>
 		<script src="components/calling/calling.js"></script>
 
+		<script src="components/dragDrop/draggable.js"></script>
+		<script scr="components/dragDrop/droppable.js"></script>
+
 		<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"/>
 		<link rel="stylesheet" type="text/css" href="components/org/org.css"/>
 		<link rel="stylesheet" type="text/css" href="components/calling/calling.css"/>
+		<link rel="stylesheet" type="text/css" href="components/dragDrop/dragDrop.css"/>
 
 		<!-- TODO use the line below after development is complete -->
 		<!--<link rel="stylesheet" type="text/css" href="css/wow.min.css"/>-->
 	</head>
 	<body ng-app="wow-app">
 		<div ng-controller="mainController as top" class="container-fluid">
-			<div class="col-md-2">
+			<div class="col-md-2" draggable dropFn="dropped(1)">
 				<org org-info="top.organizationList[0]"></org>
 			</div>
-			<div class="col-md-2">
+			<div class="col-md-2" draggable dropFn="dropped(2)">
 				<org org-info="top.organizationList[0]"></org>
 			</div>
-			<div class="col-md-2">
+			<div class="col-md-2" draggable dropFn="dropped(3)">
 				<org org-info="top.organizationList[0]"></org>
 			</div>
-			<div class="col-md-2">
+			<div class="col-md-2" draggable dropFn="dropped(4)">
 				<org org-info="top.organizationList[0]"></org>
 			</div>
-			<div class="col-md-2">
+			<div class="col-md-2" draggable dropFn="dropped(5)">
 				<org org-info="top.organizationList[0]"></org>
 			</div>
-			<div class="col-md-2">
+			<div class="col-md-2" draggable dropFn="dropped(6)">
 				<org org-info="top.organizationList[0]"></org>
 			</div>
 		</div>

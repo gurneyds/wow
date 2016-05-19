@@ -6,5 +6,10 @@
 		var control = this;
 
 		control.organizationList = mockDataService.getOrganizationList();
+
+		control.dropped = function() {
+			alert('Item dropped');
+		};
+
 	}]);
 })();
