@@ -4,10 +4,10 @@
 
 	app.controller('mainController', ['mockDataService', function(mockDataService) {
 		var control = this;
-
-		mockDataService.getOrganizationList().then(
-			function(orgList) {
-				control.organizationList = orgList;
+		
+		mockDataService.getOrganizationGrid().then(
+			function(dataGrid) {
+				control.grid = dataGrid
 			},
 			function() {
 				// TODO - error occurred, show something...

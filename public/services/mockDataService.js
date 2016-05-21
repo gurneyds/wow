@@ -81,11 +81,37 @@
 		orgList.push(eldersQuorumOrg);
 		orgList.push(highPriestsOrg);
 
+
+		// Put the data into a 2 dimensional array to easier rendering
+		function prepareData(orgList) {
+			var grid = [ [],[],[],[],[],[] ];
+			for(var i=0; i < orgList.length; i++) {
+				if(i < 6) {
+					grid[i].push(orgList[i]);
+				} else if(i >= 6 && i < 12) {
+					grid[i-6].push(orgList[i]);
+				} else if(i >= 12 && i < 18) {
+					grid[i-12].push(orgList[i]);
+				} else if(i >= 18 && i < 24) {
+					grid[i-18].push(orgList[i]);
+				} else if(i >= 24 && i < 30) {
+					grid[i-24].push(orgList[i]);
+				} else if(i >= 30 && i < 36) {
+					grid[i-30].push(orgList[i]);
+				} else if(i >= 36 && i < 42) {
+					grid[i-36].push(orgList[i]);
+				} else if(i >= 42 && i < 48) {
+					grid[i-42].push(orgList[i]);
+				}
+			}
+			return grid;
+		}
+
 		return {
-			getOrganizationList: function() {
+			getOrganizationGrid: function() {
 				var deferred = $q.defer();
 
-				deferred.resolve(orgList);
+				deferred.resolve( prepareData(orgList) );
 
 				return deferred.promise;
 			}
