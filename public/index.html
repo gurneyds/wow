@@ -28,7 +28,7 @@
 			<div class="col-md-2" ng-repeat="column in [0,1,2,3,4,5]">
 				<span ng-repeat="org in top.grid[column]">
 					<org org-info="org"></org>
-					<div droppable dropFn="dropped(1)">
+					<div droppable drop-fn="top.dropped(id, $index, column)">
 						Drop target here
 					</div>
 				</span>

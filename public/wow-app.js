@@ -14,8 +14,8 @@
 			}
 		);
 
-		control.dropped = function() {
-			alert('Item dropped');
+		control.dropped = function(id, row, column) {
+			alert('Item dropped id=' + id + ' dropped into row:' + row + ' column=' + column);
 		};
 
 	}]);

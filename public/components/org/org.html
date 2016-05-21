@@ -1,5 +1,5 @@
-<div class="org" draggable>
-  <div class="org-name">{{orgInfo.name}}</div>
+<div class="org" draggable id="{{orgInfo.id}}">
+  <div class="org-name">{{orgInfo.name}} ({{orgInfo.id}})</div>
   <div ng-repeat="calling in orgInfo.callingList">
       <calling calling-info="calling"></calling>
   </div>

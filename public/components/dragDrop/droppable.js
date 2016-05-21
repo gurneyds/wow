@@ -49,21 +49,12 @@
 
 						this.classList.remove('over');
 
-						var item = document.getElementById(e.dataTransfer.getData('Text'));
-						this.appendChild(item);
+						var itemId = e.dataTransfer.getData('Text');
 
 						// Call the callback if present
 						if(scope.dropFn) {
-							scope.dropFn();
+							scope.dropFn( {id: itemId} );
 						}
-
-						// // call the drop passed drop function
-						// scope.$apply(function(scope) {
-						// 	var fn = scope.dropFn();
-						// 	if ('undefined' !== typeof fn) {
-						// 		fn(item.id);
-						// 	}
-						// });
 						return false;
 					},
 					false

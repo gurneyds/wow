@@ -3,13 +3,14 @@
 	var app = angular.module('wow-app');
 
 	app.factory('callingModel', [function() {
-		var calling = function(name, positions) {
+		var calling = function(id, name, positions) {
+			this.id = id;
 			this.name = name;
 			this.positions = positions;
 		};
 
-		function create(name, positions) {
-			return new calling(name, positions);
+		function create(id, name, positions) {
+			return new calling(id, name, positions);
 		}
 
 		return {
