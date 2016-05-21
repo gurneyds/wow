@@ -5,6 +5,7 @@
 
 		<script src="wow-app.js"></script>
 		<script src="services/mockDataService.js"></script>
+		<script src="services/dataService.js"></script>
 
 		<script src="model/callingModel.js"></script>
 		<script src="model/orgModel.js"></script>
@@ -27,9 +28,12 @@
 		<div ng-controller="mainController as top" class="container-fluid">
 			<div class="col-md-2" ng-repeat="column in [0,1,2,3,4,5]">
 				<span ng-repeat="org in top.grid[column]">
+					<div droppable drop-fn="top.dropped(id, $index, column, false)">
+						Drop target here above
+					</div>
 					<org org-info="org"></org>
-					<div droppable drop-fn="top.dropped(id, $index, column)">
-						Drop target here
+					<div droppable drop-fn="top.dropped(id, $index, column, true)" ng-if="$last">
+						Drop target here below
 					</div>
 				</span>
 			</div>

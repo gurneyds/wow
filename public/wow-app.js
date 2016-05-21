@@ -2,10 +2,10 @@
 	'use strict';
 	var app = angular.module('wow-app', []);
 
-	app.controller('mainController', ['mockDataService', function(mockDataService) {
+	app.controller('mainController', ['dataService', function(dataService) {
 		var control = this;
 		
-		mockDataService.getOrganizationGrid().then(
+		dataService.getOrganizationGrid().then(
 			function(dataGrid) {
 				control.grid = dataGrid
 			},
@@ -14,8 +14,8 @@
 			}
 		);
 
-		control.dropped = function(id, row, column) {
-			alert('Item dropped id=' + id + ' dropped into row:' + row + ' column=' + column);
+		control.dropped = function(id, row, column, isBelow) {
+			control.grid = dataService.moveOrganization(control.grid, id, row, column, isBelow);
 		};
 
 	}]);
