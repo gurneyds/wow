@@ -4,23 +4,19 @@
 
 	app.controller('mainController', ['dataService', function(dataService) {
 		var control = this;
-		var dataGrid;
 
 		dataService.getOrganizationGrid().then(
 			function(data) {
-				dataGrid = data;
+				control.dataGrid = data;
 			},
 			function() {
 				// TODO - error occurred, show something...
 			}
 		);
 
-		control.getOrganizationListAtCol = function(col) {
-			return dataGrid[col];
-		};
-
 		control.dropped = function(id, row, column, isBelow) {
-			dataService.moveOrganization(dataGrid, id, row, column, isBelow);
+			// TODO - this function changes the data grid in place - which isn't "functional" programming and should be changed
+			dataService.moveOrganization(control.dataGrid, id, row, column, isBelow);
 		};
 
 	}]);
