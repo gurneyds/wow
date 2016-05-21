@@ -25,36 +25,13 @@
 	</head>
 	<body ng-app="wow-app">
 		<div ng-controller="mainController as top" class="container-fluid">
-			<div class="col-md-2">
-				<org org-info="top.grid[0][0]"></org>
-
-				<div droppable dropFn="dropped(1)">
-					Drop target here
-				</div>
-				<org org-info="top.grid[0][1]"></org>
-
-				<div droppable dropFn="dropped(1)">
-					Drop target here
-				</div>
-			</div>
-			<div class="col-md-2">
-				<org org-info="top.grid[1][1]"></org>
-
-				<div droppable dropFn="dropped(1)">
-					Drop target here
-				</div>
-			</div>
-			<div class="col-md-2">
-				<org org-info="top.grid[2][0]"></org>
-			</div>
-			<div class="col-md-2">
-				<org org-info="top.grid[3][0]"></org>
-			</div>
-			<div class="col-md-2">
-				<org org-info="top.grid[4][0]"></org>
-			</div>
-			<div class="col-md-2">
-				<org org-info="top.grid[5][0]"></org>
+			<div class="col-md-2" ng-repeat="column in [0,1,2,3,4,5]">
+				<span ng-repeat="org in top.grid[column]">
+					<org org-info="org"></org>
+					<div droppable dropFn="dropped(1)">
+						Drop target here
+					</div>
+				</span>
 			</div>
 		</div>
 	</body>
