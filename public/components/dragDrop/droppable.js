@@ -51,10 +51,14 @@
 
 						var itemId = e.dataTransfer.getData('Text');
 
-						// Call the callback if present
-						if(scope.dropFn) {
-							scope.dropFn( {id: itemId} );
-						}
+						// call the drop passed drop function - it is necessary to have this $apply so that the digest
+						// cycle will run again and update the ui with the modified data
+						scope.$apply(function(scope) {
+							var fn = scope.dropFn;
+							if ('undefined' !== typeof fn) {
+								fn( {id: itemId} );
+							}
+						});
 						return false;
 					},
 					false
