@@ -5,7 +5,14 @@
 	app.controller('mainController', ['mockDataService', function(mockDataService) {
 		var control = this;
 
-		control.organizationList = mockDataService.getOrganizationList();
+		mockDataService.getOrganizationList().then(
+			function(orgList) {
+				control.organizationList = orgList;
+			},
+			function() {
+				// TODO - error occurred, show something...
+			}
+		);
 
 		control.dropped = function() {
 			alert('Item dropped');
